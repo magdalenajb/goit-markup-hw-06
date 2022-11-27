@@ -344,6 +344,42 @@
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
             <button type="button" class="close-btn" data-modal-close>X</button>
-        </div></div>
+            <form class="modal-form">
+               <h3 class="modal-title">Zostaw swoje dane w formularzu poniżej</h3>
+               <fieldset class="fieldset">
+                <label class="label" for="user-name">Imie</label>
+                <svg class="modalicon" width="18" height="18"><use href="./images/icons.svg#icon-person-black"></use></svg>
+                <input class="input" type="text"id="user-name" name="user-name">
+               </fieldset>
+            <fieldset class="fieldset">
+                <label class="label" for="user-phone">Telefon</label>
+                <svg class="modalicon" width="18" height="18"><use href="./images/icons.svg#icon-phone-black"></use></svg>
+                <input class="input" type="tel" id="user-phone" name="user-phone">
+            </fieldset>
+            <fieldset class="fieldset">
+                <label class="label" for="user-mail">Email</label>
+                <svg class="modalicon" width="18" height="18"><use href="./images/icons.svg#icon-email-black"></use></svg>
+                <input class="input" type="email" id="user-mail" name="user-mail">
+            </fieldset>
+            <fieldset class="fieldset-1">
+                <label class="label-1" for="comment">Komentarz</label>
+                <textarea class="comment" type="text" rows="7" id="comment" name="comment"  placeholder="Wprowadź tekst"></textarea>
+            </fieldset>
+            <label class="checked-label">
+                <input type="checkbox" class="checked-box" value="legal">Oświadczam, iż akceptuję
+                <a class="" href="#">Regulamin</a>i<a class="" href="#">Politykę prywatności.</a>
+                <span>
+                    <svg><use></use></svg>
+                </span>
+            </label>
+            <button type="submit" class="comment-button">Wyślij</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+<script src="./js/modal.js"></script>
 </body>
 </html>
