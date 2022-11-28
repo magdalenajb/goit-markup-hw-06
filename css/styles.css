@@ -743,6 +743,14 @@ padding-top: 10px;
 padding-bottom: 10px;
 }
 
+.fieldset:focus-within{
+  border-color:var(--brand-color);
+  
+}
+.fieldset:focus-within .modalicon{
+  fill:var(--brand-color);
+}
+
 .fieldset-1{
 display: flex;
 position: relative;
@@ -780,6 +788,11 @@ Line-height: 1.17px;
 letter-spacing: 0.01em;
 color: rgba(117, 117, 117, 0.5);
 }
+
+.fieldset-1:focus-within{
+border-color:var(--brand-color);
+}
+
 .checked-label{
 font-weight: 400;
 font-size: 14px;
@@ -788,6 +801,36 @@ letter-spacing: 0.03em;
 color: #757575;
 position: relative;
 }
+
+.checked-label::before{
+  display:inline-block;
+  content:"";
+  width:16px;
+  height:15px;
+  border: 2px solid #212121;
+  border-radius:4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.checked-box:checked + .checked-label::before{
+border: none;
+/*background-color: var(--brand-color);*/
+transition:backgroung-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+background-image: url(../images/icons.svg#icon-check);
+}
+
+.checked-box{
+position: absolute !important;
+clip:rect(1px 1px 1px 1px);
+clip:rect(1px, 1px, 1px, 1px);
+padding:0 !important;
+border:0 !important;
+height:1px !important;
+width:1px !important;
+overflow:hidden;
+}
+
 .comment-button{
 border: 1px solid rgba(255, 255, 255, 0.3);
 background-color:var(--brand-color);
@@ -798,8 +841,7 @@ font-Size: 16px;
 Line-height: 30px;
 display: flex;
 align-items: center;
-margin-left: auto;
-margin-right: auto;
+margin: 0 auto;
 cursor: pointer;
 padding-left: 76px;
 padding-right: 76px;
