@@ -707,6 +707,8 @@ height: 100%;
 border-radius: 4px;
 margin-block: 28px;
 border-color: rgba(33, 33, 33, 0.2);
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .modal-form .label{
@@ -727,6 +729,7 @@ position: absolute;
 top: 14px;
 left: 15px;
 fill: #212121;
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form .input{
@@ -746,13 +749,9 @@ padding-bottom: 10px;
 
 .fieldset:focus-within{
   border-color:var(--brand-color);
-  transition-duration: 250ms;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .fieldset:focus-within .modalicon{
   fill:var(--brand-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fieldset-1{
@@ -763,6 +762,7 @@ height: 100%;
 border-radius: 4px;
 margin-block: 28px;
 border-color: rgba(33, 33, 33, 0.2);
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .label-1{
@@ -795,49 +795,46 @@ color: rgba(117, 117, 117, 0.5);
 
 .fieldset-1:focus-within{
 border-color:var(--brand-color);
-transition-duration: 250ms;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .checked-label{
-font-weight: 400;
-font-size: 14px;
-line-height: 24px;
-letter-spacing: 0.03em;
-color: #757575;
-position: relative;
+  position:relative;
 
 }
+.checked-box{
+  position:absolute;
+  width: 16px;
+  height:15px;
+  top:5px;
+  left:-20px;
+  opacity:0;
+}
 
-.checked-label::before{
-  display:inline-block;
-  content:"";
+.checked-icon{
+position:absolute;
+top:2px;
+left:-20px;
+opacity:0;
+border-radius: 4px;
+transition-duration: 250ms;
+transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checked-border{
+  position:absolute;
+  display:width;
   width:16px;
   height:15px;
   border: 2px solid #212121;
-  border-radius:4px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 
-  0px 2px 1px rgba(0, 0, 0, 0.2);
-  margin-right: 7px;
+  border-radius: 4px;
+  left:-20px;
+  top:2px;
+  background-color: transparent;
 }
 
-.checked-box:checked + .checked-label::before{
-border: none;
+.checked-box:checked ~ .checked-icon{
+opacity:1;
+border-color:var(--brand-color);
 background-color: var(--brand-color);
-transition-duration: 250ms;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-}
-
-.checked-box{
-position: absolute !important;
-clip:rect(1px 1px 1px 1px);
-clip:rect(1px, 1px, 1px, 1px);
-padding:0 !important;
-border:0 !important;
-height:1px !important;
-width:1px !important;
-overflow:hidden;
 }
 
 .comment-button{
@@ -860,14 +857,3 @@ margin-bottom: 40px;
 margin-top:30px;
 }
 
-.vector-12{
-  z-index: -1;
-  opacity:0;
-  position:absolute;
-  top:-0.15px;
-  left:1.2px;
-}
-.checkvec{
-position:relative;
-}
-.checked-box:checked
