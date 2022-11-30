@@ -726,8 +726,8 @@ color: #757575;
 
 .modalicon{
 position: absolute;
-top: 14px;
-left: 15px;
+top: 11px;
+left: 12px;
 fill: #212121;
 transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -745,10 +745,12 @@ width: 200px;}
 .input{
 padding-top: 10px;
 padding-bottom: 10px;
+outline:none;
 }
 
 .fieldset:focus-within{
   border-color:var(--brand-color);
+  
 }
 .fieldset:focus-within .modalicon{
   fill:var(--brand-color);
@@ -774,6 +776,7 @@ line-height: 14px;
 letter-spacing: 0.01em;
 color: #757575;
 }
+
 .modal-form .comment{
 border: 0;
 background-color: transparent;
@@ -783,6 +786,7 @@ padding-right: 16px;
 padding-top: 12px;
 resize: none;
 position: relative;
+outline:none;
 }
 
 .comment::placeholder{
@@ -795,10 +799,11 @@ color: rgba(117, 117, 117, 0.5);
 
 .fieldset-1:focus-within{
 border-color:var(--brand-color);
+
 }
+
 .checked-label{
   position:relative;
-
 }
 .checked-box{
   position:absolute;
